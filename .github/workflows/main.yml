@@ -1,5 +1,6 @@
 on: [push]  # déclenché à chaque push
-
+env:
+   DAGGER_NO_NAG: 1
 
 jobs:
    build:
