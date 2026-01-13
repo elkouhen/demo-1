@@ -9,7 +9,7 @@ jobs:
        - name: Checkout
          uses: actions/checkout@v4  # récupère le code
        - name: Build Jar
-         uses: dagger/dagger-for-github@8.1.0  # utilise l'action Dagger
+         uses: dagger/dagger-for-github@v8.2.0
          with:
            version: "latest"
            args: build-mvn --source=. --image-name="ttl.sh/dagger-wescale-app:1h"
