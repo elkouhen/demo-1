@@ -1,0 +1,16 @@
+on: [push]  # déclenché à chaque push
+
+
+jobs:
+   build:
+       name: build
+       runs-on: ubuntu-latest
+       steps:
+       - name: Checkout
+         uses: actions/checkout@v4  # récupère le code
+       - name: Build Jar
+         uses: dagger/dagger-for-github@8.2.0  # utilise l'action Dagger
+         with:
+           version: "latest"
+           args: build-mvn --source=. --image-name="ttl.sh/dagger-wescale-app:1h"
+           module: github.com/elkouhen/dagger-tasks  # module Dagger
